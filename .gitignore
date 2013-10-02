@@ -1,18 +1,63 @@
-# Xcode
-.DS_Store
-build/
-*.pbxuser
-!default.pbxuser
-*.mode1v3
-!default.mode1v3
-*.mode2v3
-!default.mode2v3
-*.perspectivev3
-!default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
-xcuserdata
-profile
-*.moved-aside
-DerivedData
-.idea/
+#import <UIKit/UIKit.h>
+
+@interface FirstViewController : UIViewController
+- (IBAction)theSummit:(UIButton *)sender;
+- (IBAction)thePursuit:(UIButton *)sender;
+- (IBAction)lifeGroups:(UIButton *)sender;
+- (IBAction)connectGroups:(UIButton *)sender;
+- (IBAction)aboutUs:(UIButton *)sender;
+- (IBAction)outReach:(UIButton *)sender;
+@property (strong, nonatomic) IBOutlet UIWebView *buttonWeb;
+    
+@end
+
+
+
+
+
+#import "FirstViewController.h"
+
+@interface FirstViewController ()
+
+@end
+
+@implementation FirstViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+  
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)theSummit:(UIButton *)sender {
+    
+    
+     [self.buttonWeb  loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/the-summit"]]];
+}
+
+- (IBAction)thePursuit:(UIButton *)sender {
+    [self.buttonWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/pursuit"]]];
+}
+
+- (IBAction)lifeGroups:(UIButton *)sender {
+    [self.buttonWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/life-groups"]]];
+}
+
+- (IBAction)connectGroups:(UIButton *)sender {
+    [self.buttonWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/connect"]]];
+}
+
+- (IBAction)aboutUs:(UIButton *)sender {
+    [self.buttonWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/about"]]];
+}
+
+- (IBAction)outReach:(UIButton *)sender {
+    [self.buttonWeb loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.riveroflifeag.com/outreach"]]];
+}
+@end
